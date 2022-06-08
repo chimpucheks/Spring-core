@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+	<!-- <bean id="p1" class="com.zensar.beans.Product"> <property name="productId"> 
+		<value>1</value> </property> <property name="productName" value="dell"></property> 
+		<property name="productCost" value="50000"></property> </bean> -->
+	<!-- <bean id="p2" class="com.zensar.beans.Product"> <constructor-arg index="0"> 
+		<value type="int">101</value> </constructor-arg> <constructor-arg> <value>Fridge</value> 
+		</constructor-arg> <constructor-arg index="2"> <value type="int">20000</value> 
+		</constructor-arg> </bean> -->
+
+	<context:component-scan
+		base-package="com.studytonight.community"></context:component-scan>
+
+
+	<bean id="s1" class="com.zensar.beans.Student" scope="prototype">
+		<property name="studentId" value="123"></property>
+		<property name="studentName" value="Ram"></property>
+		<property name="studentAge" value="30"></property>
+		<property name="address" ref="add1">
+		</property>
+	</bean>
+
+	<!-- <bean id="s2" class="com.zensar.beans.Student">
+		<property name="studentId" value="32"></property>
+		<property name="studentName" value="Hari"></property>
+		<property name="studentAge" value="20"></property>
+		<property name="address" ref="add1"></property>
+	</bean> -->
+
+	<bean id="add1" class="com.zensar.beans.Address">
+				<property name="state" value="AP"></property>
+				<property name="city" value="Vizag"></property>
+				<property name="pincode" value="530024"></property>
+	</bean>
+
+</beans>
